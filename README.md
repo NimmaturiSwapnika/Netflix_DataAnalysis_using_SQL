@@ -3,7 +3,7 @@
 ![Netflix Logo](https://github.com/NimmaturiSwapnika/Netflix_DataAnalysis_using_SQL/blob/main/Netflix_logo.jpg)
 
 ## Overview
-This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
+This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, dataset, schema, findings, and conclusions.
 
 ## Objectives
 Analyze the distribution of content types (movies vs TV shows).
@@ -41,7 +41,7 @@ CREATE TABLE netflix
 
 1. Content Distribution: The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
 2. Common Ratings: Insights into the most common ratings provide an understanding of the content's target audience.
-3. Geographical Insights: The top countries and the average content releases by USA highlight regional content distribution.
+3. Geographical Insights: The top countries and the average content releases by USA and India highlight regional content distribution.
 4. Content Categorization: Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
 5. This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
 
