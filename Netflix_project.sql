@@ -47,7 +47,7 @@ GROUP BY type;
 -- 2. Find the most common rating for movies & Tv shows
 SELECT * FROM netflix;
 
-\* 'The rating column contains characters, it is not an integer, so we cannot use MAX(), 
+/* 'The rating column contains characters, it is not an integer, so we cannot use MAX(), 
 to find the most common rating'
 */
 
@@ -78,7 +78,7 @@ WHERE type = 'Movie' AND release_year = 2000;
 -- 4. Find the top 5 countries with the most content on Netflix
 SELECT * FROM netflix;
 
-\* "If we do this, then it doesnt give us the actual counts, because, there are multiple 
+/* "If we do this, then it doesnt give us the actual counts, because, there are multiple 
 rows, in which there are multiple countrie's in single observation. We need to split them
 to get the accurate answer"
 */
@@ -147,7 +147,7 @@ AND
 duration = (SELECT MIN(duration) FROM netflix WHERE type = 'Movie');
 
 
-\* In the above subquery, it is important to use the where clause because there might be 
+/* In the above subquery, it is important to use the where clause because there might be 
 rows that are of non-movie record and they might contain a NULL value as its minimum duration, 
 Since NULL values do not match any actual duration values in the table, the main query 
 will return no results. To prevent this, we must filter the subquery with WHERE 
@@ -166,7 +166,7 @@ record with the same duration (if it exists), so filtering in the subquery is un
 -- 6. Find content added in the last 5 years
 SELECT * FROM netflix; 
 
-\* 'We should convert the date_added from char into date first. To get the last 5 years
+/* 'We should convert the date_added from char into date first. To get the last 5 years
 we can use current_date which gives todays date and then substract it from 5' */
 
 SELECT *
@@ -187,7 +187,7 @@ SELECT * FROM netflix
 WHERE director LIKE '%Sangeeth Sivan%';
 
 
-\* "ILIKE is used for case-sensitivity, if there are any records that are not matching 
+/* "ILIKE is used for case-sensitivity, if there are any records that are not matching 
 exactly with Sangeeth Sivan and is sangeeth sivan, it still considers" */
 SELECT * FROM netflix
 WHERE director ILIKE '%Sangeeth Sivan%';
@@ -198,11 +198,11 @@ WHERE director ILIKE '%Sangeeth Sivan%';
 -- 8. List all TV Shows with more than 7 seasons
 SELECT * FROM netflix; 
 
-\* "The duration col is in text (ex: 1 season), so we need to only get the numbers 
+/* The duration col is in text (ex: 1 season), so we need to only get the numbers 
 from duration so we use split_part() to get the numbers seperated in a new col. 
-Now this new col is also in text, but we need it as number so used cast to type convert  
-&    "
+Now this new col is also in text, but we need it as number so used cast to type convert
 */
+	
 SELECT * FROM netflix
 WHERE type = 'TV Show' AND 
 CAST(split_part(duration, ' ', 1) AS NUMERIC) > 7;
@@ -271,7 +271,7 @@ LIMIT 5;
 
 -- 11. List all the Comedy movies
 
-\* "This is not returning any of the records because, the genre is 'Comedies' but 
+/* "This is not returning any of the records because, the genre is 'Comedies' but 
 we used comedies, case sensitivity." */
 
 SELECT * FROM netflix
@@ -316,13 +316,13 @@ ORDER BY no_of_movies DESC
 LIMIT 10;
 
 
-\* 15. a. Categorize content based on presence of keywords 'Kill' & 'Violence' in description
+/* 15. a. Categorize content based on presence of keywords 'Kill' & 'Violence' in description
 field. Label this content as 'Flagged' & others as 'Unflagged'. 
 b. Count no.of items in each category */
 
 SELECT * FROM netflix;
 
-\* CTE (common table expression) is used here to store the categorization logic 
+/* CTE (common table expression) is used here to store the categorization logic 
 (through the CASE statement).
 
 We need to categorize the content based on the presence of keywords (like 'Kill' & 'Violence') 
