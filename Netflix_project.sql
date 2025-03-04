@@ -316,13 +316,13 @@ ORDER BY no_of_movies DESC
 LIMIT 10;
 
 
-\* "15. a. Categorize content based on presence of keywords 'Kill' & 'Violence' in description
+\* 15. a. Categorize content based on presence of keywords 'Kill' & 'Violence' in description
 field. Label this content as 'Flagged' & others as 'Unflagged'. 
-c. Count no.of items in each category "*/
+b. Count no.of items in each category */
 
 SELECT * FROM netflix;
 
-\* 'CTE (common table expression) is used here to store the categorization logic 
+\* CTE (common table expression) is used here to store the categorization logic 
 (through the CASE statement).
 
 We need to categorize the content based on the presence of keywords (like 'Kill' & 'Violence') 
@@ -337,7 +337,7 @@ like COUNT and GROUP BY.
 
 After creating this temporary result set, we can reference it to perform operations like
 COUNT and GROUP BY, which is needed because, the problem is to count the no.of items in 
-each category.'
+each category.
 */
 
  
